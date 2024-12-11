@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airplane Ticket Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Airplane Ticket Booking</h1>
+        </header>
+
+        <div class="container">
+            <div class="form-container">
+                <h2>Create a New Ticket</h2>
+                <form @submit.prevent="createTicket">
+                    <div class="form-group">
+                        <label for="departure_time">Departure Time:</label>
+                        <input type="datetime-local" v-model="ticket.departure_time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="source">Source Airport:</label>
+                        <input type="text" v-model="ticket.source" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="destination">Destination Airport:</label>
+                        <input type="text" v-model="ticket.destination" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="passport_id">Passport ID:</label>
+                        <input type="text" v-model="ticket.passport_id" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Create Ticket</button>
+                </form>
+            </div>
+
+            <div class="form-container">
+                <h2>Cancel Ticket</h2>
+                <form @submit.prevent="cancelTicket">
+                    <div class="form-group">
+                        <label for="cancel_ticket_id">Ticket ID:</label>
+                        <input type="text" v-model="cancelTicketId" required>
+                    </div>
+                    <button type="submit" class="btn-danger">Cancel Ticket</button>
+                </form>
+            </div>
+
+            <div class="response-message" v-if="responseMessage">
+                {{ responseMessage }}
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
