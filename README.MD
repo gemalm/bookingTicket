@@ -18,6 +18,7 @@
 - **Docker**: For containerizing the application
 
 ## File Structure
+```plaintext
 project-directory/ 
 ├── api.php # Main API file 
 ├── docker-compose.yml # Docker Compose configuration file 
@@ -25,7 +26,7 @@ project-directory/
 ├── index.html # User interface 
 ├── script.js # JavaScript file for frontend logic 
 └── style.css # CSS style file └── tickets.db # SQLite database file to store ticket details
-
+```
 
 ## Requirements
 
@@ -46,3 +47,8 @@ project-directory/
 
 3. **Access the aplication:**
 Once the container is up and running, visit http://localhost:8000/index.html in your browser.
+
+## Development Instructions
+To create a new ticket, fill out the form in the Create a New Ticket section.
+To cancel a ticket, enter the Ticket ID in the Cancel Ticket section.
+API responses will be displayed.
